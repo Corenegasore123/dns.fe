@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary-green: #47A15E;
+  --primary-yellow: #F7C35F;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary-green: var(--primary-green);
+  --color-primary-yellow: var(--primary-yellow);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-sans);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  padding-top: 110px; /* Aligned with header height */
+}
+
+*,
+*::before,
+*::after,
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+}
+
+.active-nav-link {
+  position: relative;
+  text-decoration: none;
+}
+
+.active-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: -6px;
+  right: -6px;
+  height: 14px;
+  background: var(--color-primary-yellow);
+  clip-path: polygon(
+    0% 42%,
+    40% 42%,
+    50% 0%,
+    60% 42%,
+    100% 42%,
+    100% 58%,
+    60% 58%,
+    50% 16%,
+    40% 58%,
+    0% 58%
+  );
+}
+
+/* Utility for swipeable horizontal carousels */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
