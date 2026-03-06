@@ -45,8 +45,8 @@ export default function AboutTeam() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section className="pt-16 pb-6 lg:pt-24 lg:pb-10 px-4 sm:px-6 lg:px-10">
-      <div className="max-w-7xl mx-auto">
+    <section className="pt-16 pb-6 lg:pt-24 lg:pb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* ── Header ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-end mb-16 lg:mb-20">

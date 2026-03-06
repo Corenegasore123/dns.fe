@@ -2,7 +2,8 @@ import React from 'react';
 
 const AboutStory = () => {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start pb-2 px-4 sm:px-6 lg:px-8">
+    <section className="pb-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
       {/* Left Column - Text */}
       <div className="text-[#3C465F] space-y-7 text-[16px] leading-[1.7] lg:pr-10 pt-4">
         <p>
@@ -52,6 +53,7 @@ const AboutStory = () => {
             <p className="text-slate-500 text-[12px] font-bold mt-1.5 uppercase tracking-wider">Owner</p>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

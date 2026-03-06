@@ -29,7 +29,7 @@ const categories = [
 const Categories = () => {
   return (
     <section className="bg-white py-8 lg:py-10">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <h2 className="text-4xl sm:text-5xl font-semibold tracking-tighter text-[var(--color-primary-yellow,#f5a623)] mb-12 sm:mb-16 tracking-tight">
           Categories

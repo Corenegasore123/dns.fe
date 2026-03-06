@@ -71,7 +71,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: any }) => (
 const Testimonials = () => {
   return (
     <section className="bg-white pt-10 pb-16 lg:pt-12 lg:pb-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 text-center mb-16 lg:mb-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16 lg:mb-20">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#1a1a1a] mb-6 tracking-tight">
           What <span className="text-[var(--color-primary-yellow,#f5a623)]">Customers</span> Say
         </h2>

@@ -7,7 +7,7 @@ import Branches from '../components/Branches';
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white">
-      <div className="max-w-7xl mx-auto pt-12 pb-4 lg:pt-16 lg:pb-6">
+      <div className="pt-12 pb-4 lg:pt-16 lg:pb-6">
         <AboutHero />
         <AboutStory />
         <AboutTeam />

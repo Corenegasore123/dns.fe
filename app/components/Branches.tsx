@@ -22,7 +22,7 @@ const branches = [
 const Branches = () => {
   return (
     <section className="bg-white pt-10 pb-6 lg:pt-12 lg:pb-8">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#1a1a1a] mb-10 sm:mb-12 lg:mb-16 tracking-tight">
           Discover our <span className="text-[#47A15E]">Branches</span>

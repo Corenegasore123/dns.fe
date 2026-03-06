@@ -35,7 +35,7 @@ const Header = () => {
           paddingBottom: scrolled ? '4px' : '8px',
         }}
       >
-        <div className={`max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center transition-all duration-300 gap-2 ${scrolled ? 'text-[10px] sm:text-xs' : 'text-[10px] sm:text-xs md:text-sm'}`}>
+        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center transition-all duration-300 gap-2 ${scrolled ? 'text-[10px] sm:text-xs' : 'text-[10px] sm:text-xs md:text-sm'}`}>
           <div className="flex items-center gap-2 text-center sm:text-left">
             <Clock className={`text-[var(--color-primary-green)] flex-shrink-0 transition-all duration-300 ${scrolled ? 'w-3.5 h-3.5' : 'w-3 h-3 sm:w-4 h-4'}`} />
             <span className='text-[#797979] font-medium'>Sun - Thur: 7:30 - 19:30, Fri: 7:30 - 16:00, Saturday - CLOSED</span>
@@ -49,7 +49,7 @@ const Header = () => {
 
       {/* Main header */}
       <div className={`bg-white transition-shadow duration-300 ${scrolled ? 'shadow-md' : 'shadow-sm'}`}>
-        <div className="max-w-7xl mx-auto px-4 py-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex justify-between items-center">
             {/* Logo */}
             <div className="text-[var(--color-primary-green)] text-2xl font-bold leading-tight">
@@ -108,7 +108,7 @@ const Header = () => {
             opacity: mobileMenuOpen ? 1 : 0,
           }}
         >
-          <div className="max-w-7xl mx-auto px-4 pb-4 border-t border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 border-t border-gray-100">
             <nav className="flex flex-col space-y-1 pt-3">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
