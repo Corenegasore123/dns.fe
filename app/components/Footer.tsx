@@ -20,10 +20,10 @@ const Footer = () => {
             <div className="flex flex-col gap-4 sm:gap-6">
               <h4 className="font-semibold text-[#1a1a1a] text-sm">Categories</h4>
               <div className="flex flex-col gap-3">
-                <Link href="/products" className="text-[13px] text-[#777] hover:text-[#1a1a1a] transition-colors">Fertilizers</Link>
-                <Link href="/products" className="text-[13px] text-[#777] hover:text-[#1a1a1a] transition-colors">Fungicides</Link>
-                <Link href="/products" className="text-[13px] text-[#777] hover:text-[#1a1a1a] transition-colors">Insecticides</Link>
-                <Link href="/products" className="text-[13px] text-[#777] hover:text-[#1a1a1a] transition-colors">Others</Link>
+                <Link href="/products" className="text-[0.8125rem] text-[#777] hover:text-[#1a1a1a] transition-colors">Fertilizers</Link>
+                <Link href="/products" className="text-[0.8125rem] text-[#777] hover:text-[#1a1a1a] transition-colors">Fungicides</Link>
+                <Link href="/products" className="text-[0.8125rem] text-[#777] hover:text-[#1a1a1a] transition-colors">Insecticides</Link>
+                <Link href="/products" className="text-[0.8125rem] text-[#777] hover:text-[#1a1a1a] transition-colors">Others</Link>
               </div>
             </div>
 
@@ -31,10 +31,10 @@ const Footer = () => {
             <div className="flex flex-col gap-4 sm:gap-6">
               <h4 className="font-semibold text-[#1a1a1a] text-sm">Products</h4>
               <div className="flex flex-col gap-3">
-                <p className="text-[13px] text-[#777] transition-colors">Dudu</p>
-                <p className="text-[13px] text-[#777] transition-colors">Rocket</p>
-                <p className="text-[13px] text-[#777] transition-colors">Ridomil</p>
-                <p className="text-[13px] text-[#777] transition-colors">Mupazeb</p>
+                <p className="text-[0.8125rem] text-[#777] transition-colors">Dudu</p>
+                <p className="text-[0.8125rem] text-[#777] transition-colors">Rocket</p>
+                <p className="text-[0.8125rem] text-[#777] transition-colors">Ridomil</p>
+                <p className="text-[0.8125rem] text-[#777] transition-colors">Mupazeb</p>
               </div>
             </div>
 
@@ -42,9 +42,9 @@ const Footer = () => {
             <div className="flex flex-col gap-4 sm:gap-6">
               <h4 className="font-semibold text-[#1a1a1a] text-sm">Company</h4>
               <div className="flex flex-col gap-3">
-                <Link href="/about" className="text-[13px] text-[#777] hover:text-[#1a1a1a] transition-colors">About</Link>
-                <p className="text-[13px] text-[#777] transition-colors">Testimonials</p>
-                <Link href="/contact" className="text-[13px] text-[#777] hover:text-[#1a1a1a] transition-colors">Contact Us</Link>
+                <Link href="/about" className="text-[0.8125rem] text-[#777] hover:text-[#1a1a1a] transition-colors">About</Link>
+                <p className="text-[0.8125rem] text-[#777] transition-colors">Testimonials</p>
+                <Link href="/contact" className="text-[0.8125rem] text-[#777] hover:text-[#1a1a1a] transition-colors">Contact Us</Link>
               </div>
             </div>
 
@@ -52,9 +52,9 @@ const Footer = () => {
             <div className="flex flex-col gap-4 sm:gap-6">
               <h4 className="font-semibold text-[#1a1a1a] text-sm">Branches</h4>
               <div className="flex flex-col gap-3">
-                <p className="text-[13px] text-[#777] transition-colors">Musanze</p>
-                <p className="text-[13px] text-[#777] transition-colors">Nyabugogo</p>
-                <p className="text-[13px] text-[#777] transition-colors">Mahoko</p>
+                <p className="text-[0.8125rem] text-[#777] transition-colors">Musanze</p>
+                <p className="text-[0.8125rem] text-[#777] transition-colors">Nyabugogo</p>
+                <p className="text-[0.8125rem] text-[#777] transition-colors">Mahoko</p>
               </div>
             </div>
           </div>

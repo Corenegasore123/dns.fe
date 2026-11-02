@@ -5,7 +5,7 @@
   --foreground: #171717;
   --primary-green: #47A15E;
   --primary-yellow: #F7C35F;
-  --header-h: 124px; /* unscrolled sticky header height from md up; used by the hero */
+  --header-h: 7.75rem; /* unscrolled sticky header height from md up (rem, so it scales with the root size); used by the hero */
 }
 
 @theme inline {
@@ -21,6 +21,15 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+  }
+}
+
+/* Large screens: grow the root font size from 16px at 1536px to 20px at 2560px.
+   Tailwind sizes are rem-based, so text, spacing and max-w containers all scale together
+   (media-query breakpoints are unaffected: they resolve rem against the browser default). */
+@media (min-width: 1536px) {
+  html {
+    font-size: clamp(16px, calc(16px + (100vw - 1536px) * 0.0039), 20px);
   }
 }
 

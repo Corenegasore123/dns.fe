@@ -82,11 +82,11 @@ const FeaturedProducts = () => {
           ref={scrollRef}
           className="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:gap-6 mb-12 sm:mb-20 pb-4 scrollbar-hide -mx-4 px-4 scroll-px-4 sm:mx-0 sm:px-0 sm:scroll-px-0 scroll-smooth"
         >
-          {/* Phones: ~80% wide so the next card peeks in; sm: 2 per view; lg: 4 per view */}
+          {/* Phones: ~80% wide so the next card peeks in; sm: 2 per view; lg: 3; xl: 4 (widths subtract the gap share) */}
           {products.map((product) => (
             <div
               key={product.id}
-              className="group relative flex flex-col cursor-pointer w-[80%] sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] snap-start flex-shrink-0"
+              className="group relative flex flex-col cursor-pointer w-[80%] sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(25%-1.125rem)] snap-start flex-shrink-0"
             >
               {/* Large Image — takes up most of the card */}
               <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl">
@@ -95,19 +95,19 @@ const FeaturedProducts = () => {
                   alt={product.name}
                   fill
                   className="object-cover transition-transform duration-700"
-                  sizes="(max-width: 640px) 80vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 640px) 80vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                 />
 
                 {/* Category badge — top left */}
                 <div className="absolute top-4 left-4">
-                  <span className="bg-[#47A15E] text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-sm">
+                  <span className="bg-[#47A15E] text-white text-[0.6875rem] font-bold px-3 py-1.5 rounded-full shadow-sm">
                     {product.category}
                   </span>
                 </div>
 
                 {/* Stock badge — top right */}
                 <div className="absolute top-4 right-4">
-                  <span className="bg-white/95 text-[#1a1a1a] text-[11px] font-semibold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1.5">
+                  <span className="bg-white/95 text-[#1a1a1a] text-[0.6875rem] font-semibold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 relative">
                       <span className="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-75"></span>
                     </span>
@@ -116,9 +116,9 @@ const FeaturedProducts = () => {
                 </div>
 
                 {/* Metadata strip — bottom of image with backdrop blur */}
-                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 p-4 sm:p-5 gap-3 rounded-xl bg-white/20 backdrop-blur-md border border-white/30 shadow-lg flex items-center justify-between transition-all duration-300 group-hover:bg-white/30 group-hover:border-white/40">
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 p-4 gap-3 rounded-xl bg-white/20 backdrop-blur-md border border-white/30 shadow-lg flex items-center justify-between transition-all duration-300 group-hover:bg-white/30 group-hover:border-white/40">
                   <div className="min-w-0">
-                    <h3 className="text-white text-lg sm:text-xl font-bold mb-1 leading-tight drop-shadow-md break-words">
+                    <h3 className="text-white text-base sm:text-lg font-bold mb-1 leading-tight drop-shadow-md break-words">
                       {product.name}
                     </h3>
                     <p className="text-white/90 text-sm font-medium drop-shadow-sm">{product.size}</p>

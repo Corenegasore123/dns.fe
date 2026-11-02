@@ -40,7 +40,7 @@ const Header = () => {
       <div
         className={`bg-[#EDECE9] transition-all duration-300 ${scrolled ? 'py-1' : 'py-1.5 sm:py-2'}`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center sm:justify-between items-center gap-4 text-[11px] sm:text-xs md:text-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center sm:justify-between items-center gap-4 text-[0.6875rem] sm:text-xs md:text-sm">
           <div className="flex items-center gap-2 min-w-0">
             <Clock className="text-[var(--color-primary-green)] flex-shrink-0 w-3.5 h-3.5 sm:w-4 sm:h-4" />
             <span className="text-[#797979] font-medium truncate">

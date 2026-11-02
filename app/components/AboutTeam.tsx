@@ -56,7 +56,7 @@ export default function AboutTeam() {
               <div className="w-6 h-6 rounded-full bg-[#47A15E] flex items-center justify-center">
                 <div className="w-2 h-2 rounded-full bg-white" />
               </div>
-              <span className="text-[10px] lg:text-[11px] font-semibold tracking-[0.25em] uppercase text-[#47A15E]">
+              <span className="text-[0.625rem] lg:text-[0.6875rem] font-semibold tracking-[0.25em] uppercase text-[#47A15E]">
                 Our Team
               </span>
             </div>
@@ -69,7 +69,7 @@ export default function AboutTeam() {
 
           {/* Right */}
           <div className="lg:pl-12 lg:border-l border-stone-200">
-            <p className="text-[15px] lg:text-base leading-relaxed text-stone-500 mb-6 lg:mb-8 max-w-sm">
+            <p className="text-[0.9375rem] lg:text-base leading-relaxed text-stone-500 mb-6 lg:mb-8 max-w-sm">
               Seasoned professionals with deep roots in agriculture and an
               unwavering commitment to empowering farmers at every step of
               their journey.
@@ -80,7 +80,7 @@ export default function AboutTeam() {
                 <span className="block text-3xl lg:text-4xl font-light text-stone-900 leading-none">
                   {teamMembers.length.toString().padStart(2, "0")}
                 </span>
-                <span className="text-[9px] lg:text-[10px] font-semibold tracking-widest uppercase text-stone-400 mt-2 block">
+                <span className="text-[0.5625rem] lg:text-[0.625rem] font-semibold tracking-widest uppercase text-stone-400 mt-2 block">
                   Members
                 </span>
               </div>
@@ -121,7 +121,7 @@ export default function AboutTeam() {
               {/* Top-left index */}
               <div className="absolute top-3 left-3 sm:top-5 sm:left-5 lg:top-6 lg:left-6">
                 <span
-                  className="text-[9px] lg:text-[10px] font-bold tracking-[0.2em] transition-colors duration-300"
+                  className="text-[0.5625rem] lg:text-[0.625rem] font-bold tracking-[0.2em] transition-colors duration-300"
                   style={{ color: hovered === index ? "#47A15E" : "rgba(255,255,255,0.4)" }}
                 >
                   {member.number}
@@ -136,7 +136,7 @@ export default function AboutTeam() {
                   transform: hovered === index ? "translateY(0)" : "translateY(-6px)",
                 }}
               >
-                <span className="text-[9px] font-bold tracking-widest uppercase bg-[#47A15E] text-white px-2.5 py-1 lg:px-3 lg:py-1.5 rounded-sm">
+                <span className="text-[0.5625rem] font-bold tracking-widest uppercase bg-[#47A15E] text-white px-2.5 py-1 lg:px-3 lg:py-1.5 rounded-sm">
                   {member.role}
                 </span>
               </div>
@@ -149,10 +149,10 @@ export default function AboutTeam() {
                   style={{ width: hovered === index ? "40px" : "20px", opacity: hovered === index ? 1 : 0.5 }}
                 />
 
-                <h3 className="text-white text-[13px] sm:text-base lg:text-lg font-light leading-[1.3] tracking-wide mb-1 break-words">
+                <h3 className="text-white text-[0.8125rem] sm:text-base lg:text-lg font-light leading-[1.3] tracking-wide mb-1 break-words">
                   {member.name}
                 </h3>
-                <p className="text-stone-400 text-[9px] sm:text-[10px] lg:text-xs font-medium tracking-widest uppercase">
+                <p className="text-stone-400 text-[0.5625rem] sm:text-[0.625rem] lg:text-xs font-medium tracking-widest uppercase">
                   {member.role}
                 </p>
               </div>
