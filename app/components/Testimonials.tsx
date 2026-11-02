@@ -49,7 +49,9 @@ const testimonialsRow2 = [
   },
 ];
 
-const TestimonialCard = ({ testimonial }: { testimonial: any }) => (
+type Testimonial = (typeof testimonialsRow1)[number];
+
+const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
   <div className="w-[320px] sm:w-[380px] p-6 lg:p-8 bg-white rounded-2xl border border-gray-200 shadow-sm flex-shrink-0 mx-3 sm:mx-4 hover:shadow-md transition-shadow">
     <div className="flex items-center gap-4 mb-4 sm:mb-6">
       <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 ${testimonial.color}`}>
@@ -63,7 +65,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: any }) => (
       </div>
     </div>
     <p className="text-gray-600 text-[13px] sm:text-sm leading-relaxed italic">
-      "{testimonial.text}"
+      &ldquo;{testimonial.text}&rdquo;
     </p>
   </div>
 );
