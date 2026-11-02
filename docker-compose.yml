@@ -1,0 +1,14 @@
+# docker compose up -d --build   →   http://localhost:3000
+services:
+  web:
+    build: .
+    image: dns-fe
+    container_name: dns-web
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    healthcheck:
+      test: ['CMD', 'wget', '-qO-', 'http://127.0.0.1:3000/']
+      interval: 10s
+      timeout: 5s
+      retries: 5
