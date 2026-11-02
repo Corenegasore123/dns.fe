@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 const categories = [
@@ -8,21 +9,21 @@ const categories = [
     description:
       'Boost your crop yields with our premium range of organic and mineral fertilizers. Carefully formulated to replenish soil nutrients, our fertilizers support healthy plant growth from seedling to harvest — helping you get the most from every season.',
     image: '/images/home/fertilizers.jpeg',
-    href: '/products',
+    href: '/products?category=fertilizers',
   },
   {
     name: 'Insecticides',
     description:
       'Protect your crops from harmful pests with our advanced insecticide solutions. From contact sprays to systemic treatments, we offer effective, farm-safe products that safeguard your harvest without compromising soil health.',
     image: '/images/home/insecticides.jpeg',
-    href: '/products',
+    href: '/products?category=insecticides',
   },
   {
     name: 'Fungicides',
     description:
       'Prevent and control fungal diseases that threaten your crops. Our fungicide range includes preventive and curative solutions, helping you maintain plant vitality and reduce post-harvest losses across all growing conditions.',
     image: '/images/home/fungicides.jpeg',
-    href: '/products',
+    href: '/products?category=fungicides',
   },
 ];
 
@@ -50,13 +51,13 @@ const Categories = () => {
                 <p className="text-sm sm:text-[0.938rem] lg:text-base leading-relaxed text-[#555] mb-6">
                   {category.description}
                 </p>
-                <a
+                <Link
                   href={category.href}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-[#1a1a1a] w-fit transition-colors duration-300 hover:text-[var(--color-primary-green,#2e7d32)] group"
                 >
                   Learn More
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </a>
+                </Link>
               </div>
 
               {/* Image — always right */}
@@ -75,13 +76,13 @@ const Categories = () => {
 
         {/* View More Products */}
         <div className="mt-12 sm:mt-16 flex justify-center">
-          <a
+          <Link
             href="/products"
             className="inline-flex items-center gap-2 bg-[#1a1a1a] text-white px-8 py-3.5 rounded-sm font-semibold transition-all duration-300 hover:bg-[var(--color-primary-green,#2e7d32)] hover:shadow-lg active:scale-95 group"
           >
             View More Categories
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
