@@ -5,7 +5,8 @@ import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <section className="relative h-[60vh] sm:h-[70vh] md:h-[calc(100vh-110px)] min-h-[400px] w-full overflow-hidden">
+    // Height: fill the screen below the sticky header (--header-h, globals.css); svh keeps mobile browser bars from cropping it
+    <section className="relative h-[70svh] md:h-[calc(100svh-var(--header-h))] min-h-[420px] md:min-h-[560px] max-h-[960px] w-full overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -20,7 +21,7 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative h-full max-w-7xl mx-auto px-4 flex items-center">
+      <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
         <div className="max-w-4xl text-white pt-5">
           <p className="text-[10px] md:text-sm font-bold tracking-[0.3em] mb-4 uppercase">
             Welcome to Duhingeneza Shop

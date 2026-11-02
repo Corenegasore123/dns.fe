@@ -1,11 +1,12 @@
 import React from 'react';
+import Image from 'next/image';
 
 const AboutStory = () => {
   return (
     <section className="pb-2">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
       {/* Left Column - Text */}
-      <div className="text-[#3C465F] space-y-7 text-[16px] leading-[1.7] lg:pr-10 pt-4">
+      <div className="text-[#3C465F] space-y-6 sm:space-y-7 text-[15px] sm:text-[16px] leading-[1.7] lg:pr-10 lg:pt-4">
         <p>
           For over 15 years, Duhingeneza Shop has been a cornerstone of the agricultural community in Rwanda. Our journey began with a simple mission: to provide farmers with the high-quality tools and supplies they need to succeed in a changing climate.
         </p>
@@ -17,40 +18,45 @@ const AboutStory = () => {
         </p>
       </div>
 
-      {/* Right Column - Images Composition */}
-      <div className="relative h-[480px] md:h-[520px] w-full mt-12 lg:mt-0 lg:pl-4">
+      {/* Right Column - Overlapping portraits. Both cards share one grid cell, so the
+          height follows the content at every width instead of a fixed pixel height. */}
+      <div className="grid grid-cols-12 w-full max-w-2xl mx-auto lg:max-w-none lg:pl-4">
         {/* Rose Card - Top Right (Background) */}
-        <div className="absolute top-0 right-0 w-[58%] z-0 text-right">
+        <div className="col-start-6 col-span-7 row-start-1 z-0 text-right">
           <div className="relative w-full aspect-square overflow-hidden rounded-[2px] bg-slate-50 border border-slate-100">
-            <img
+            <Image
               src="/images/about/rose.jpeg"
               alt="Rose MUKAHAKIZIMANA"
-              className="object-cover w-full h-full"
+              fill
+              sizes="(max-width: 1024px) 60vw, 360px"
+              className="object-cover"
             />
           </div>
-          <div className="pt-5 pb-2">
-            <h3 className="text-[#101828] text-[15px] font-bold leading-tight uppercase tracking-tight">
+          <div className="pt-3 sm:pt-5 pb-2 pl-[30%]">
+            <h3 className="text-[#101828] text-[13px] sm:text-[15px] font-bold leading-tight uppercase tracking-tight break-words">
               Rose<br />
               MUKAHAKIZIMANA
             </h3>
-            <p className="text-slate-500 text-[12px] font-bold mt-1.5 uppercase tracking-wider">Co-Owner</p>
+            <p className="text-slate-500 text-[11px] sm:text-[12px] font-bold mt-1.5 uppercase tracking-wider">Co-Owner</p>
           </div>
         </div>
 
-        {/* Eugene Card - Bottom Left (Foreground) - Overlapping by 20% */}
-        <div className="absolute top-[15%] left-0 w-[58%] z-10 text-left">
+        {/* Eugene Card - Bottom Left (Foreground), starts ~1/3 down Rose's photo */}
+        <div className="col-start-1 col-span-7 row-start-1 mt-[35%] z-10 text-left">
           <div className="relative w-full aspect-square overflow-hidden rounded-[2px] bg-white border border-slate-100 shadow-sm">
-            <img
+            <Image
               src="/images/about/eugene.jpeg"
               alt="Eugene MUNYANEZA"
-              className="object-cover w-full h-full"
+              fill
+              sizes="(max-width: 1024px) 60vw, 360px"
+              className="object-cover"
             />
           </div>
-          <div className="pt-6 pb-2">
-            <h3 className="text-[#101828] font-bold text-[15px] md:text-[17px] leading-tight uppercase tracking-tight">
+          <div className="pt-4 sm:pt-6 pb-2">
+            <h3 className="text-[#101828] font-bold text-[13px] sm:text-[15px] md:text-[17px] leading-tight uppercase tracking-tight">
               Eugene MUNYANEZA
             </h3>
-            <p className="text-slate-500 text-[12px] font-bold mt-1.5 uppercase tracking-wider">Owner</p>
+            <p className="text-slate-500 text-[11px] sm:text-[12px] font-bold mt-1.5 uppercase tracking-wider">Owner</p>
           </div>
         </div>
       </div>

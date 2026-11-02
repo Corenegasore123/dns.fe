@@ -6,9 +6,9 @@ const Footer = () => {
     <footer className="w-full bg-white pt-8 pb-8 border-t border-gray-200 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Section - Links */}
-        <div className="flex flex-col md:flex-row justify-between mb-24 lg:mb-32">
+        <div className="flex flex-col md:flex-row justify-between mb-14 sm:mb-24 lg:mb-32">
           {/* Brand Name on the left */}
-          <div className="mb-12 md:mb-0 md:w-1/3">
+          <div className="mb-8 sm:mb-12 md:mb-0 md:w-1/3">
             <h3 className="text-base sm:text-lg font-bold tracking-widest text-[#47A15E] uppercase">
               DUHINGENEZA SHOP
             </h3>
