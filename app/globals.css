@@ -25,9 +25,10 @@
   }
 }
 
-/* Full-width page container: no max-width, so content fills large screens; only the gutter limits it */
+/* Page container: content up to 96rem wide (~1680px on a 1920 screen, ~1920px on 2560), plus the gutter */
 @utility site-container {
   width: 100%;
+  max-width: calc(96rem + 2 * var(--gutter));
   margin-inline: auto;
   padding-inline: var(--gutter);
 }

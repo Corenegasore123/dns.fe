@@ -41,7 +41,7 @@ const InnovationStats = () => {
           </div>
 
           {/* Right - Description + Link */}
-          <div className="flex flex-col justify-center max-w-3xl">
+          <div className="flex flex-col justify-center">
             <p className="text-[#0A0A0A] text-sm sm:text-base leading-relaxed mb-4">
               At Duhingeneza Shop, we are dedicated to transforming agriculture through innovation and excellence. By providing farmers with access to premium seeds, advanced fertilizers, and cutting-edge equipment, we help build a more productive and sustainable future for communities everywhere.
             </p>
