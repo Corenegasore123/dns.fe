@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# dns.fe — Duhingeneza Shop
 
-## Getting Started
+Frontend for Duhingeneza Shop, built with [Next.js](https://nextjs.org) and Tailwind CSS. The API lives in [dns.be](https://github.com/Corenegasore123/dns.be).
 
-First, run the development server:
+## Requirements
+
+- Node.js 24+
+- npm
+
+## Development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm ci
+npm run dev          # http://localhost:3000
+npm run lint
+npm run build        # production build (also type-checks)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Docker
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+docker compose up -d --build   # http://localhost:3000
+docker compose down
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The [Dockerfile](Dockerfile) builds Next.js in [standalone mode](https://nextjs.org/docs/app/api-reference/config/next-config-js/output) and runs only the standalone server plus static assets, as the non-root `node` user.
 
-## Learn More
+## CI
 
-To learn more about Next.js, take a look at the following resources:
+GitHub Actions ([.github/workflows/ci.yml](.github/workflows/ci.yml)) runs lint and a production build on every pull request and push to `main`, then builds the Docker image and smoke-tests the running container.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Workflow
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Never commit directly to `main`. Create a feature branch (`feat/...`, `fix/...`), open a pull request, and merge once CI passes.
