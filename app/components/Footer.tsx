@@ -20,10 +20,10 @@ const Footer = () => {
             <div className="flex flex-col gap-4 sm:gap-6">
               <h4 className="font-semibold text-[#1a1a1a] text-sm">Categories</h4>
               <div className="flex flex-col gap-3">
-                <Link href="/products" className="text-[0.8125rem] text-[#777] hover:text-[#1a1a1a] transition-colors">Fertilizers</Link>
-                <Link href="/products" className="text-[0.8125rem] text-[#777] hover:text-[#1a1a1a] transition-colors">Fungicides</Link>
-                <Link href="/products" className="text-[0.8125rem] text-[#777] hover:text-[#1a1a1a] transition-colors">Insecticides</Link>
-                <Link href="/products" className="text-[0.8125rem] text-[#777] hover:text-[#1a1a1a] transition-colors">Others</Link>
+                <Link href="/products?category=fertilizers" className="text-[0.8125rem] text-[#777] hover:text-[#1a1a1a] transition-colors">Fertilizers</Link>
+                <Link href="/products?category=fungicides" className="text-[0.8125rem] text-[#777] hover:text-[#1a1a1a] transition-colors">Fungicides</Link>
+                <Link href="/products?category=insecticides" className="text-[0.8125rem] text-[#777] hover:text-[#1a1a1a] transition-colors">Insecticides</Link>
+                <Link href="/products?category=other" className="text-[0.8125rem] text-[#777] hover:text-[#1a1a1a] transition-colors">Others</Link>
               </div>
             </div>
 
