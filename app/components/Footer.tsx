@@ -65,11 +65,11 @@ const Footer = () => {
           <p>Copyright © DuhingeNezaShop {new Date().getFullYear()}</p>
         </div>
 
-        {/* Bottom Section - Huge Title */}
-        <div className="w-full text-center overflow-hidden flex justify-center items-end leading-[0.8] mb-4">
-          <h1 className="text-[6vw] sm:text-[8.6vw] font-bold text-[#0A0A0A] tracking-tighter whitespace-nowrap select-none">
+        {/* Bottom Section - Huge Title, sized to the container width (cqw) so it always spans it edge to edge */}
+        <div className="@container w-full text-center overflow-hidden flex justify-center items-end leading-[0.8] mb-4">
+          <p aria-hidden="true" className="text-[10.4cqw] font-bold text-[#0A0A0A] tracking-tighter whitespace-nowrap select-none">
             DUHINGENEZA SHOP
-          </h1>
+          </p>
         </div>
       </div>
     </footer>
