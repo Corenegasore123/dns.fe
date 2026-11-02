@@ -38,12 +38,12 @@ export default async function ProductsPage({ searchParams }: { searchParams: Sea
   return (
     <main className="bg-white py-8 sm:py-12 lg:py-16">
       <div className="site-container grid grid-cols-1 lg:grid-cols-[15rem_minmax(0,1fr)] xl:grid-cols-[17rem_minmax(0,1fr)] gap-6 lg:gap-10">
-        {/* Categories — vertical list on desktop, horizontally scrollable row on smaller screens */}
-        <aside className="min-w-0">
+        {/* Categories — sticks to the left while the grid scrolls (desktop); wraps onto rows on smaller screens, never scrolls */}
+        <aside className="min-w-0 lg:sticky lg:top-[calc(var(--header-h)+1.5rem)] lg:self-start">
           <h2 className="text-xl sm:text-2xl font-bold text-[#47A15E] mb-4 lg:mb-6">Categories</h2>
           <nav
             aria-label="Product categories"
-            className="flex lg:flex-col gap-2 lg:gap-3 overflow-x-auto scrollbar-hide -mx-[var(--gutter)] px-[var(--gutter)] lg:mx-0 lg:px-0 pb-1"
+            className="flex flex-wrap lg:flex-col gap-2 lg:gap-3"
           >
             {filterOptions.map((option) => {
               const active = option.slug === category;
@@ -52,7 +52,7 @@ export default async function ProductsPage({ searchParams }: { searchParams: Sea
                   key={option.slug}
                   href={hrefFor({ category: option.slug, page: 1 })}
                   aria-current={active ? 'page' : undefined}
-                  className={`flex items-center gap-3 flex-shrink-0 whitespace-nowrap rounded-md border px-4 py-2.5 lg:py-3 text-sm transition-colors ${
+                  className={`flex items-center gap-2.5 lg:gap-3 whitespace-nowrap rounded-md border px-3 sm:px-4 py-2 sm:py-2.5 lg:py-3 text-[0.8125rem] sm:text-sm transition-colors ${
                     active ? 'border-[#47A15E] bg-green-50/60 text-[#1a1a1a] font-medium' : 'border-gray-200 text-gray-700 hover:border-gray-300'
                   }`}
                 >
