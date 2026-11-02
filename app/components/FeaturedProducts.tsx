@@ -52,7 +52,7 @@ const FeaturedProducts = () => {
 
   return (
     <section className="bg-white py-12 sm:py-20 lg:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="site-container">
 
         {/* Header Section — title and arrows share one row at every width */}
         <div className="flex flex-row justify-between items-end mb-8 sm:mb-12 lg:mb-16 gap-4">
@@ -80,7 +80,7 @@ const FeaturedProducts = () => {
         {/* Carousel-style Products Container */}
         <div 
           ref={scrollRef}
-          className="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:gap-6 mb-12 sm:mb-20 pb-4 scrollbar-hide -mx-4 px-4 scroll-px-4 sm:mx-0 sm:px-0 sm:scroll-px-0 scroll-smooth"
+          className="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:gap-6 mb-12 sm:mb-20 pb-4 scrollbar-hide -mx-[var(--gutter)] px-[var(--gutter)] scroll-px-[var(--gutter)] sm:mx-0 sm:px-0 sm:scroll-px-0 scroll-smooth"
         >
           {/* Phones: ~80% wide so the next card peeks in; sm: 2 per view; lg: 3; xl: 4 (widths subtract the gap share) */}
           {products.map((product) => (

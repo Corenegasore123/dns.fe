@@ -40,7 +40,7 @@ const Header = () => {
       <div
         className={`bg-[#EDECE9] transition-all duration-300 ${scrolled ? 'py-1' : 'py-1.5 sm:py-2'}`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center sm:justify-between items-center gap-4 text-[0.6875rem] sm:text-xs md:text-sm">
+        <div className="site-container flex justify-center sm:justify-between items-center gap-4 text-[0.6875rem] sm:text-xs md:text-sm">
           <div className="flex items-center gap-2 min-w-0">
             <Clock className="text-[var(--color-primary-green)] flex-shrink-0 w-3.5 h-3.5 sm:w-4 sm:h-4" />
             <span className="text-[#797979] font-medium truncate">
@@ -57,7 +57,7 @@ const Header = () => {
 
       {/* Main header */}
       <div className={`bg-white transition-shadow duration-300 ${scrolled ? 'shadow-md' : 'shadow-sm'}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3">
+        <div className="site-container py-2.5 sm:py-3">
           <div className="flex justify-between items-center gap-4">
             {/* Logo */}
             <Link href="/" className="text-[var(--color-primary-green)] text-lg sm:text-2xl font-bold leading-tight flex-shrink-0">
@@ -117,7 +117,7 @@ const Header = () => {
             opacity: mobileMenuOpen ? 1 : 0,
           }}
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 border-t border-gray-100">
+          <div className="site-container pb-4 border-t border-gray-100">
             <nav className="flex flex-col space-y-1 pt-3">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;

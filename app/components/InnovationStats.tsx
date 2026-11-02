@@ -25,7 +25,7 @@ const stats = [
 const InnovationStats = () => {
   return (
     <section className="bg-white py-8 lg:py-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="site-container">
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 lg:gap-24 mb-16 sm:mb-20">
           {/* Left - Heading */}
@@ -41,7 +41,7 @@ const InnovationStats = () => {
           </div>
 
           {/* Right - Description + Link */}
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col justify-center max-w-3xl">
             <p className="text-[#0A0A0A] text-sm sm:text-base leading-relaxed mb-4">
               At Duhingeneza Shop, we are dedicated to transforming agriculture through innovation and excellence. By providing farmers with access to premium seeds, advanced fertilizers, and cutting-edge equipment, we help build a more productive and sustainable future for communities everywhere.
             </p>

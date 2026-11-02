@@ -29,22 +29,22 @@ const categories = [
 const Categories = () => {
   return (
     <section className="bg-white py-8 lg:py-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="site-container">
         {/* Section Header */}
         <h2 className="text-4xl sm:text-5xl font-semibold tracking-tighter text-[var(--color-primary-yellow,#f5a623)] mb-12 sm:mb-16 tracking-tight">
           Categories
         </h2>
 
-        {/* Category Cards */}
-        <div className="flex flex-col">
+        {/* Category Cards — text/image rows up to xl; from xl, three side-by-side cards (image on top) fill wide screens */}
+        <div className="flex flex-col xl:grid xl:grid-cols-3 xl:gap-10 2xl:gap-14">
           {categories.map((category) => (
             <div
               key={category.name}
-              className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:gap-10 lg:gap-16 items-center py-4 sm:py-5 lg:py-8"
+              className="grid grid-cols-1 md:grid-cols-[1fr_auto] xl:flex xl:flex-col gap-6 md:gap-10 lg:gap-16 xl:gap-6 items-center xl:items-stretch py-4 sm:py-5 lg:py-8 xl:py-0"
             >
-              {/* Text Content — always left */}
+              {/* Text Content — left in rows, below the image in cards */}
               <div className="flex flex-col justify-center max-w-2xl">
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#1a1a1a] mb-4 tracking-tight">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-2xl 2xl:text-3xl font-bold text-[#1a1a1a] mb-4 tracking-tight">
                   {category.name}
                 </h3>
                 <p className="text-sm sm:text-[0.938rem] lg:text-base leading-relaxed text-[#555] mb-6">
@@ -59,14 +59,14 @@ const Categories = () => {
                 </a>
               </div>
 
-              {/* Image — always right */}
-              <div className="relative w-full md:w-[23.75rem] lg:w-[27.5rem] xl:w-[32rem] aspect-[4/3] overflow-hidden bg-gray-100 flex-shrink-0">
+              {/* Image — right in rows, on top in cards */}
+              <div className="relative w-full md:w-[23.75rem] lg:w-[27.5rem] xl:w-full xl:order-first aspect-[4/3] overflow-hidden bg-gray-100 flex-shrink-0">
                 <Image
                   src={category.image}
                   alt={category.name}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 40vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 40vw, 33vw"
                 />
               </div>
             </div>

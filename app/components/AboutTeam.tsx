@@ -46,7 +46,7 @@ export default function AboutTeam() {
 
   return (
     <section className="pt-14 pb-6 sm:pt-16 lg:pt-24 lg:pb-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="site-container">
 
         {/* ── Header ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-12 items-end mb-10 sm:mb-16 lg:mb-20">
@@ -89,7 +89,7 @@ export default function AboutTeam() {
         </div>
 
         {/* ── Grid ── */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-stone-200 border-x border-b border-stone-200">
+        <div className="grid grid-cols-2 md:grid-cols-3 min-[112.5rem]:grid-cols-6 gap-px bg-stone-200 border-x border-b border-stone-200">
           {teamMembers.map((member, index) => (
             <div
               key={index}

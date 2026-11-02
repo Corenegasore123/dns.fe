@@ -4,9 +4,9 @@ import Image from 'next/image';
 const AboutStory = () => {
   return (
     <section className="pb-2">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+      <div className="site-container grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
       {/* Left Column - Text */}
-      <div className="text-[#3C465F] space-y-6 sm:space-y-7 text-[0.9375rem] sm:text-[1rem] leading-[1.7] lg:pr-10 lg:pt-4">
+      <div className="text-[#3C465F] space-y-6 sm:space-y-7 text-[0.9375rem] sm:text-[1rem] leading-[1.7] lg:pr-10 lg:pt-4 max-w-3xl">
         <p>
           For over 15 years, Duhingeneza Shop has been a cornerstone of the agricultural community in Rwanda. Our journey began with a simple mission: to provide farmers with the high-quality tools and supplies they need to succeed in a changing climate.
         </p>

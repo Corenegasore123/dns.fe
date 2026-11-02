@@ -21,7 +21,7 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+      <div className="relative h-full site-container flex items-center">
         <div className="max-w-5xl text-white pt-5">
           <p className="text-[0.625rem] md:text-sm font-bold tracking-[0.3em] mb-4 uppercase">
             Welcome to Duhingeneza Shop
