@@ -5,7 +5,7 @@
   --foreground: #171717;
   --primary-green: #47A15E;
   --primary-yellow: #F7C35F;
-  --gutter: clamp(1rem, 4vw, 6rem); /* page side padding: 16px on phones, ~4% of the screen on large ones */
+  --gutter: clamp(1.25rem, 7vw, 12rem); /* page side padding: 20px on phones, ~7% of the screen on larger ones */
   --header-h: 7.75rem; /* unscrolled sticky header height from md up (rem, so it scales with the root size); used by the hero */
 }
 
