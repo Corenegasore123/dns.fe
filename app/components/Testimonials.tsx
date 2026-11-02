@@ -52,19 +52,19 @@ const testimonialsRow2 = [
 type Testimonial = (typeof testimonialsRow1)[number];
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
-  <div className="w-[320px] sm:w-[380px] p-6 lg:p-8 bg-white rounded-2xl border border-gray-200 shadow-sm flex-shrink-0 mx-3 sm:mx-4 hover:shadow-md transition-shadow">
+  <div className="w-[17.5rem] sm:w-[23.75rem] p-5 sm:p-6 lg:p-8 bg-white rounded-2xl border border-gray-200 shadow-sm flex-shrink-0 mx-3 sm:mx-4 hover:shadow-md transition-shadow">
     <div className="flex items-center gap-4 mb-4 sm:mb-6">
       <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 ${testimonial.color}`}>
         <User className="w-6 h-6" />
       </div>
       <div>
-        <h4 className="font-semibold text-gray-900 text-[15px] sm:text-base leading-tight">
+        <h4 className="font-semibold text-gray-900 text-[0.9375rem] sm:text-base leading-tight">
           {testimonial.name}
         </h4>
         <p className="text-gray-500 text-xs sm:text-sm mt-1">{testimonial.role}</p>
       </div>
     </div>
-    <p className="text-gray-600 text-[13px] sm:text-sm leading-relaxed italic">
+    <p className="text-gray-600 text-[0.8125rem] sm:text-sm leading-relaxed italic">
       &ldquo;{testimonial.text}&rdquo;
     </p>
   </div>
@@ -73,7 +73,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
 const Testimonials = () => {
   return (
     <section className="bg-white pt-10 pb-16 lg:pt-12 lg:pb-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16 lg:mb-20">
+      <div className="site-container text-center mb-10 sm:mb-16 lg:mb-20">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#1a1a1a] mb-6 tracking-tight">
           What <span className="text-[var(--color-primary-yellow,#f5a623)]">Customers</span> Say
         </h2>
@@ -99,7 +99,7 @@ const Testimonials = () => {
         </div>
 
         {/* Second Row - Scrolling Right (Reverse) */}
-        <div className="flex w-max animate-scrollYReverse -ml-[100px]">
+        <div className="flex w-max animate-scrollYReverse -ml-[6.25rem]">
           <div className="flex">
             {testimonialsRow2.map((t) => (
               <TestimonialCard key={t.id} testimonial={t} />

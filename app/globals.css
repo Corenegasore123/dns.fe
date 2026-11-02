@@ -5,6 +5,8 @@
   --foreground: #171717;
   --primary-green: #47A15E;
   --primary-yellow: #F7C35F;
+  --gutter: clamp(1.25rem, 7vw, 12rem); /* page side padding: 20px on phones, ~7% of the screen on larger ones */
+  --header-h: 7.75rem; /* unscrolled sticky header height from md up (rem, so it scales with the root size); used by the hero */
 }
 
 @theme inline {
@@ -23,11 +25,27 @@
   }
 }
 
+/* Page container: content up to 96rem wide (~1680px on a 1920 screen, ~1920px on 2560), plus the gutter */
+@utility site-container {
+  width: 100%;
+  max-width: calc(96rem + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Large screens: grow the root font size from 16px at 1536px to 20px at 2560px.
+   Tailwind sizes are rem-based, so text, spacing and max-w containers all scale together
+   (media-query breakpoints are unaffected: they resolve rem against the browser default). */
+@media (min-width: 1536px) {
+  html {
+    font-size: clamp(16px, calc(16px + (100vw - 1536px) * 0.0039), 20px);
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
-  padding-top: 110px; /* Aligned with header height */
 }
 
 *,
