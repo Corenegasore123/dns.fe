@@ -29,7 +29,7 @@ const categories = [
 const Categories = () => {
   return (
     <section className="bg-white py-8 lg:py-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="site-container">
         {/* Section Header */}
         <h2 className="text-4xl sm:text-5xl font-semibold tracking-tighter text-[var(--color-primary-yellow,#f5a623)] mb-12 sm:mb-16 tracking-tight">
           Categories
@@ -40,14 +40,14 @@ const Categories = () => {
           {categories.map((category) => (
             <div
               key={category.name}
-              className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:gap-10 lg:gap-16 items-center py-2 sm:py-3"
+              className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:gap-10 lg:gap-16 items-center py-4 sm:py-5 lg:py-8"
             >
               {/* Text Content — always left */}
-              <div className="flex flex-col justify-center">
-                <h3 className="text-xl sm:text-2xl font-bold text-[#1a1a1a] mb-4 tracking-tight">
+              <div className="flex flex-col justify-center max-w-2xl 2xl:max-w-3xl">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#1a1a1a] mb-4 tracking-tight">
                   {category.name}
                 </h3>
-                <p className="text-sm sm:text-[0.938rem] leading-relaxed text-[#555] mb-6">
+                <p className="text-sm sm:text-[0.938rem] lg:text-base leading-relaxed text-[#555] mb-6">
                   {category.description}
                 </p>
                 <a
@@ -60,13 +60,13 @@ const Categories = () => {
               </div>
 
               {/* Image — always right */}
-              <div className="relative w-full md:w-[380px] lg:w-[440px] aspect-[4/3] overflow-hidden bg-gray-100 flex-shrink-0">
+              <div className="relative w-full md:w-[23.75rem] lg:w-[27.5rem] xl:w-[32rem] 2xl:w-[36rem] aspect-[4/3] overflow-hidden bg-gray-100 flex-shrink-0">
                 <Image
                   src={category.image}
                   alt={category.name}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 440px"
+                  sizes="(max-width: 768px) 100vw, 40vw"
                 />
               </div>
             </div>
