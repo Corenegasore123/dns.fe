@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { Search } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import Pagination from '../components/Pagination';
-import { categories, filterProducts, getCategory, PAGE_SIZE } from '../data/products';
+import { categories, getCategory, PAGE_SIZE, type Product } from '../data/products';
+import { listProducts, type Paginated } from '../lib/api';
 
 export const metadata: Metadata = {
   title: 'Products | Duhingeneza Shop',
@@ -17,10 +18,21 @@ type SearchParams = Promise<{ category?: string; q?: string; page?: string }>;
 export default async function ProductsPage({ searchParams }: { searchParams: SearchParams }) {
   const { category: rawCategory = 'all', q = '', page: rawPage = '1' } = await searchParams;
   const category = getCategory(rawCategory) ? rawCategory : 'all';
-  const results = filterProducts({ category, q });
-  const totalPages = Math.max(1, Math.ceil(results.length / PAGE_SIZE));
-  const page = Math.min(Math.max(1, Number(rawPage) || 1), totalPages);
-  const pageItems = results.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+  const requested = Math.max(1, Number(rawPage) || 1);
+  let data: Paginated<Product> | null = null;
+  try {
+    data = await listProducts({ category: category === 'all' ? undefined : category, q, page: requested, pageSize: PAGE_SIZE });
+    // a page number past the end (e.g. after a filter change) shows the last page instead
+    if (data.items.length === 0 && data.total > 0 && requested > data.totalPages) {
+      data = await listProducts({ category: category === 'all' ? undefined : category, q, page: data.totalPages, pageSize: PAGE_SIZE });
+    }
+  } catch (error) {
+    console.error(error);
+  }
+  const pageItems = data?.items ?? [];
+  const total = data?.total ?? 0;
+  const totalPages = data?.totalPages ?? 1;
+  const page = data?.page ?? 1;
 
   const hrefFor = (next: { category?: string; page?: number }) => {
     const params = new URLSearchParams();
@@ -87,12 +99,19 @@ export default async function ProductsPage({ searchParams }: { searchParams: Sea
 
           <div className="flex flex-wrap items-baseline justify-between gap-2 mb-5 lg:mb-6">
             <h1 className="text-xl sm:text-2xl font-bold text-[#1a1a1a]">{heading}</h1>
-            <p className="text-sm text-gray-500">
-              {q ? <>{results.length} result{results.length === 1 ? '' : 's'} for &ldquo;{q}&rdquo;</> : <>{results.length} product{results.length === 1 ? '' : 's'}</>}
-            </p>
+            {data && (
+              <p className="text-sm text-gray-500">
+                {q ? <>{total} result{total === 1 ? '' : 's'} for &ldquo;{q}&rdquo;</> : <>{total} product{total === 1 ? '' : 's'}</>}
+              </p>
+            )}
           </div>
 
-          {pageItems.length > 0 ? (
+          {!data ? (
+            <div className="rounded-xl border border-dashed border-gray-200 py-16 px-6 text-center">
+              <p className="font-semibold text-[#1a1a1a] mb-1">Products are unavailable right now</p>
+              <p className="text-sm text-gray-500">Please try again in a moment, or call us on 0783345370.</p>
+            </div>
+          ) : pageItems.length > 0 ? (
             <div className="grid grid-cols-1 min-[22.5rem]:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-x-3 gap-y-4 sm:gap-5 lg:gap-6">
               {pageItems.map((product) => (
                 <ProductCard

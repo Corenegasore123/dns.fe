@@ -5,27 +5,39 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, Phone } from 'lucide-react';
 import ProductCard from '../../components/ProductCard';
 import ProductGallery from '../../components/ProductGallery';
-import { getCategory, getProduct, getRelated, products } from '../../data/products';
+import { getCategory } from '../../data/products';
+import { getProduct, getRelatedProducts } from '../../lib/api';
 
 type Params = Promise<{ slug: string }>;
 
-export function generateStaticParams() {
-  return products.map((p) => ({ slug: p.slug }));
-}
-
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
-  const product = getProduct((await params).slug);
+  const product = await getProduct((await params).slug).catch(() => null);
   return product
     ? { title: `${product.name} | Duhingeneza Shop`, description: product.description }
     : { title: 'Product not found | Duhingeneza Shop' };
 }
 
 export default async function ProductDetailsPage({ params }: { params: Params }) {
-  const product = getProduct((await params).slug);
+  const { slug } = await params;
+  let product, related;
+  try {
+    // related products come from the same category (API: GET /products/:slug/related)
+    [product, related] = await Promise.all([getProduct(slug), getRelatedProducts(slug, 5)]);
+  } catch (error) {
+    console.error(error);
+    return (
+      <main className="bg-white py-16">
+        <div className="site-container text-center">
+          <p className="font-semibold text-[#1a1a1a] mb-1">This product is unavailable right now</p>
+          <p className="text-sm text-gray-500 mb-5">Please try again in a moment, or call us on 0783345370.</p>
+          <Link href="/products" className="text-sm font-semibold text-[#47A15E] hover:underline">Back To Products</Link>
+        </div>
+      </main>
+    );
+  }
   if (!product) notFound();
 
-  const category = getCategory(product.category)!;
-  const related = getRelated(product, 5);
+  const category = getCategory(product.category) ?? { slug: product.category, name: product.category };
 
   return (
     <main className="bg-white py-6 sm:py-10 lg:py-12">

@@ -12,6 +12,9 @@ const navLinks = [
   { label: 'Contact', href: '/contact' },
 ];
 
+// Admin dashboard (dns.app)
+const DASHBOARD_URL = process.env.NEXT_PUBLIC_DASHBOARD_URL ?? 'http://localhost:3002';
+
 const Header = () => {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -48,10 +51,10 @@ const Header = () => {
               <span className="hidden sm:inline">Sun - Thur: 7:30 - 19:30, Fri: 7:30 - 16:00, Saturday - CLOSED</span>
             </span>
           </div>
-          <div className="hidden sm:flex items-center gap-2 text-black cursor-pointer hover:opacity-80 font-bold flex-shrink-0">
+          <a href={`${DASHBOARD_URL}/login`} className="hidden sm:flex items-center gap-2 text-black hover:opacity-80 font-bold flex-shrink-0">
             <User className="w-4 h-4" />
             <span>Admin Login</span>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -136,10 +139,10 @@ const Header = () => {
                   </a>
                 );
               })}
-              <span className="sm:hidden flex items-center gap-2 py-2.5 px-3 rounded-lg font-bold text-black cursor-pointer hover:bg-gray-50">
+              <a href={`${DASHBOARD_URL}/login`} className="sm:hidden flex items-center gap-2 py-2.5 px-3 rounded-lg font-bold text-black hover:bg-gray-50">
                 <User className="w-4 h-4" />
                 Admin Login
-              </span>
+              </a>
             </nav>
             <a
               href="tel:0783345370"

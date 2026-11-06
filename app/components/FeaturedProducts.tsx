@@ -4,11 +4,10 @@ import React, { useRef } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import ProductCard from './ProductCard';
-import { products } from '../data/products';
+import type { Product } from '../data/products';
 
-const featuredProducts = products.filter((p) => p.featured);
-
-const FeaturedProducts = () => {
+// Featured products are loaded on the server (app/page.tsx) and passed in
+const FeaturedProducts = ({ products }: { products: Product[] }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
@@ -52,7 +51,7 @@ const FeaturedProducts = () => {
           className="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:gap-6 mb-12 sm:mb-20 pb-4 scrollbar-hide -mx-[var(--gutter)] px-[var(--gutter)] scroll-px-[var(--gutter)] sm:mx-0 sm:px-0 sm:scroll-px-0 scroll-smooth"
         >
           {/* Phones: ~80% wide so the next card peeks in; sm: 2 per view; lg: 3; xl: 4 (widths subtract the gap share) */}
-          {featuredProducts.map((product) => (
+          {products.map((product) => (
             <ProductCard
               key={product.slug}
               product={product}
