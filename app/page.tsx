@@ -7,6 +7,9 @@ import FeaturedProducts from "./components/FeaturedProducts";
 import { listProducts } from "./lib/api";
 import type { Product } from "./data/products";
 
+// Featured products are live from the API, so this page renders on each request
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   // The home page still renders if the API is down; the featured section is just left out
   let featured: Product[] = [];
