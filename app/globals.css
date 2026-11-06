@@ -75,6 +75,9 @@ select {
   color: #fff; font-weight: 600; font-size: 0.875rem; padding: 0.5rem 1.25rem; border-radius: 0.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.12);
 }
+@media (max-width: 40rem) {
+  .contact-map-label span { font-size: 0.75rem; padding: 0.375rem 0.875rem; }
+}
 .leaflet-container { font-family: inherit; background: #f2f2f0; }
 /* Muted grey basemap like the design; markers sit in another pane and keep their colour */
 .leaflet-tile-pane { filter: grayscale(1) brightness(1.06) contrast(0.92) opacity(0.9); }

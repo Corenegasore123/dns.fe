@@ -27,7 +27,8 @@ export default function ContactPage() {
 
           {/* Map + form */}
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] gap-6 sm:gap-8 lg:gap-12 items-stretch max-w-6xl mx-auto">
-            <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:min-h-[24rem] overflow-hidden rounded-lg bg-gray-100">
+            {/* Taller on phones so the three branch labels have room */}
+            <div className="relative w-full aspect-[3/4] sm:aspect-[4/3] lg:aspect-auto lg:min-h-[24rem] overflow-hidden rounded-lg bg-gray-100">
               <ContactMap />
             </div>
             <ContactForm />
