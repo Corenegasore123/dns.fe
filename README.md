@@ -9,7 +9,10 @@ Frontend for Duhingeneza Shop, built with [Next.js](https://nextjs.org) and Tail
 
 ## Development
 
+Products and the contact form use the API from [dns.be](https://github.com/Corenegasore123/dns.be), so start it first (`docker compose up -d --build` in dns.be serves it on http://localhost:4000). Pages still render if the API is down; products then show an "unavailable" message.
+
 ```bash
+cp .env.example .env.local   # API_URL, NEXT_PUBLIC_API_URL
 npm ci
 npm run dev          # http://localhost:3000
 npm run lint
@@ -19,7 +22,7 @@ npm run build        # production build (also type-checks)
 ## Docker
 
 ```bash
-docker compose up -d --build   # http://localhost:3000
+docker compose up -d --build   # http://localhost:3000 (talks to the API on the host's port 4000)
 docker compose down
 ```
 

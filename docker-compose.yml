@@ -1,12 +1,20 @@
 # docker compose up -d --build   →   http://localhost:3000
 services:
   web:
-    build: .
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:4000}
     image: dns-fe
     container_name: dns-web
     restart: unless-stopped
     ports:
       - '3000:3000'
+    environment:
+      # The server loads products from the API (dns.be compose stack, published on the host's port 4000)
+      API_URL: ${API_URL:-http://host.docker.internal:4000}
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
     healthcheck:
       test: ['CMD', 'wget', '-qO-', 'http://127.0.0.1:3000/']
       interval: 10s
